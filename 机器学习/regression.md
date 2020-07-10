@@ -2,8 +2,7 @@
 回归主要的种类有：
 1. 线性回归[[linear-regression]]
 2. 曲线回归[[curvilinear-regression]]
-3. 二元logistic回归[[logistic-regression]]
-4. 多元logistic回归
+3. logistic回归[[logistic-regression]]
 
 
 
