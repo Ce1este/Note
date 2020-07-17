@@ -1,5 +1,7 @@
 # Gradient Descent For Linear Regression
 
+## Linear Regression with one variable
+
 When specifically applied to the case of linear regression, 
 a new form of the gradient descent equation can be derived. 
 
@@ -44,6 +46,67 @@ which was initialized at (48,30).
 
 The x’s in the figure (joined by straight lines) mark the successive values of θ that 
 gradient descent went through as it converged to its minimum.
+
+---
+
+## Linear Regression with Multiple Variables
+The gradient descent equation itself is generally the same form; we just have to repeat it for our 'n' features:
+
+repeat until convergence:{
+
+$\theta_{0}:=\theta_{0}-\alpha \frac{1}{m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \cdot x_{0}^{(i)}$
+
+$\theta_{1}:=\theta_{1}-\alpha \frac{1}{m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \cdot x_{1}^{(i)}$
+
+$\theta_{2}:=\theta_{2}-\alpha \frac{1}{m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \cdot x_{2}^{(i)}$
+
+$\cdots$
+
+}
+
+In other words:
+
+repeat until convergence:{
+
+$\theta_{j}:=\theta_{j}-\alpha \frac{1}{m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \cdot x_{j}^{(i)} \quad$ for $j:=0 . . \mathrm{n}$
+
+}
+
+### Matrix Notation
+
+The Gradient Descent rule can be expressed as:
+
+$\theta := \theta - \alpha \nabla J(\theta)$
+
+Where $\nabla J(\theta)$ is a column vector of the form:
+
+$\nabla J(\theta)=\left[\dfrac{\partial J(\theta)}{\partial \theta_{0}} \quad \dfrac{\partial J(\theta)}{\partial \theta_{1}} \quad \cdots \quad \dfrac{\partial J(\theta)}{\partial \theta_{n}}\right]$
+
+The j-th component of the gradient is the summation of the product of two terms:
+
+$\begin{aligned} \frac{\partial J(\theta)}{\partial \theta_{j}} &=\frac{1}{m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \cdot x_{j}^{(i)} \\ &=\frac{1}{m} \sum_{i=1}^{m} x_{j}^{(i)} \cdot\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \end{aligned}$
+
+Sometimes, the summation of the product of two terms can be expressed as the product of two vectors.
+
+Here, $x_j^{(i)}$ , for i = 1,...,m, represents the m elements of the j-th column, 
+$\vec{x_j}$ , of the training set X.
+
+The other term $(\left(h_\theta(x^{(i)}) - y^{(i)} \right)$ is the vector of the deviations 
+between the predictions $h_\theta(x^{(i)})$h and the true values $y^{(i)}$. 
+
+Re-writing $\frac{\partial J(\theta)}{\partial \theta_j}$ , we have:
+
+$\dfrac{\partial J(\theta)}{\partial \theta_{j}}=\dfrac{1}{m} \overrightarrow{x_{j}}^{T}(X \theta-\vec{y})$
+
+$\nabla J(\theta) \quad=\dfrac{1}{m} X^{T}(X \theta-\vec{y})$
+
+Finally, the matrix notation (vectorized) of the Gradient Descent rule is:
+
+$\theta:=\theta-\dfrac{\alpha}{m} X^{T}(X \theta-\vec{y})$
+
+---
+
+
 
 - back to [[gradient-descent]]
 - back to [[linear-regression]]

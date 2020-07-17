@@ -1,6 +1,38 @@
 # Hypothesis Function for Linear Regression
 
+## Linear Regression with one variable
+
 $h_{\theta}(x) = \theta_0 + \theta_1 x$
+
+## Linear Regression with Multiple Variables
+
+![sign](../img/Linear%20Regression%20with%20Multiple%20Variables.png)
+
+Now define the multivariable form of the hypothesis function as follows, accommodating these multiple features:
+
+$h_\theta (x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_3 + \cdots + \theta_n x_n$
+
+Using the definition of matrix multiplication, our multivariable hypothesis function can be concisely represented as:
+
+$h_{\theta}(x)=\left[\begin{array}{cccc}\theta_{0} & \theta_{1} & \ldots & \theta_{n}\end{array}\right]\left[\begin{array}{c}x_{0} \\ x_{1} \\ \vdots \\ x_{n}\end{array}\right]=\theta^{T} x$
+
+>Note: So that we can do matrix operations with theta and x, we will set $x^{(i)}_0 = 1$ , 
+for all values of i. 
+>
+>This makes the two vectors 'theta' and $x_{(i)}$ match each other element-wise 
+(that is, have the same number of elements: n+1).
+
+The training examples are stored in X row-wise, like such:
+
+$X=\left[\begin{array}{ll}x_{0}^{(1)} & x_{1}^{(1)} \\ x_{0}^{(2)} & x_{1}^{(2)} \\ x_{0}^{(3)} & x_{1}^{(3)}\end{array}\right], \theta=\left[\begin{array}{l}\theta_{0} \\ \theta_{1}\end{array}\right]$
+
+You can calculate the hypothesis as a column vector of size (m x 1) with:
+
+$h_\theta(X) = X \theta$ 
+
+For the rest of these notes, and other lecture notes, 
+X will represent a matrix of training examples $x_{(i)}$ stored row-wise.
+
 
 
 - back to [[linear-regression]]
