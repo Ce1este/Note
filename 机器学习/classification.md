@@ -93,7 +93,6 @@ $h_{\Theta}(x)=\left[\begin{array}{c} 0 \\ 0 \\ 1 \\ 0 \end{array}\right]$
 In which case our resulting class is the third one down, or $h_\Theta(x)_3$, 
 which represents the motorcycle.
 
-
 ---
 
 
